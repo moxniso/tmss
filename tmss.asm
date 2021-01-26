@@ -8,7 +8,7 @@
 ; Macros to make code easier to read
 RAM_Start equ 0x00FF0000
 RAM_End equ 0x00FFFFFF
-TMSS_Address equ 0x00A14101
+TMSS_Address equ 0x00A14000
 VDP_Control equ 0x00C00004
 VDP_Data equ 0x00C00000
 
@@ -216,8 +216,8 @@ loaded_code_and_regs:
         dc.l    0x000000F7    ;D6 | Might have something to do with d0
 
         dc.l    'SEGA'        ;D7
-        dc.l    0x00A14000    ;A2
-        dc.l    TMSS_Address  ;A3
+        dc.l    TMSS_Address  ;A2
+        dc.l    0x00A14101    ;A3
         dc.l    VDP_Control   ;A4 (Predicted offset)
         dc.l    VDP_Data      ;A5 (Predicted offset)
         dc.l    0x00A10001    ;A6
